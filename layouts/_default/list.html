@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="list-wrapper">
+  <div class="container">
+    <header class="list-header">
+      <h1>Wissen</h1>
+      <p>Analysen und Entscheidungshilfen für Supply Chain Management im Mittelstand.</p>
+    </header>
+
+    <div class="post-list">
+      {{ range where .Site.RegularPages "Type" "posts" }}
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">{{ .Date.Format "02.01.2006" }}</span>
+          {{ with .Params.tags }}<span class="post-tag">{{ index . 0 }}</span>{{ end }}
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p class="post-description">{{ .Description }}</p>
+        <a href="{{ .Permalink }}" class="post-link">Artikel lesen →</a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

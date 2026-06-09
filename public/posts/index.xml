@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on Mein Blog</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Mein Blog</description>
-    <generator>Hugo</generator>
-    <language>de</language>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/erster-artikel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/erster-artikel/</guid>
-      <description>&lt;p&gt;-&amp;ndash;&lt;/p&gt;
-&lt;p&gt;title: &amp;ldquo;Warum AI-native Workflows die Zukunft sind&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;date: &amp;ldquo;2026-06-09&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;draft: false&lt;/p&gt;
-&lt;p&gt;tags: [&amp;ldquo;KI&amp;rdquo;, &amp;ldquo;Produktivitaet&amp;rdquo;, &amp;ldquo;Workflow&amp;rdquo;]&lt;/p&gt;
-&lt;p&gt;description: &amp;ldquo;Wie Unternehmen ihren Content-Workflow mit AI vom Terminal steuern.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;-&amp;ndash;&lt;/p&gt;
-&lt;p&gt;## Die Art wie wir arbeiten, aendert sich&lt;/p&gt;
-&lt;p&gt;Lange Zeit bedeutete Content-Erstellung: Browser oeffnen, CMS aufrufen,&lt;/p&gt;
-&lt;p&gt;einloggen, Artikel tippen, formatieren, veroeffentlichen. Jeder Schritt&lt;/p&gt;
-&lt;p&gt;ein Klick, jeder Klick eine Unterbrechung.&lt;/p&gt;
-&lt;p&gt;AI-native Workflows drehen das um. Statt durch Interfaces zu navigieren,&lt;/p&gt;
-&lt;p&gt;beschreibst du was du willst und es passiert.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Circly-AI-Test</title>
+		<link>http://localhost:1313/posts/</link>
+		<description>Recent content in Posts on Circly-AI-Test</description>
+		<generator>Hugo</generator>
+		<language>de</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Bestellvorschlaege automatisieren: Wann der Schritt lohnt und wann nicht</title>
+				<link>http://localhost:1313/posts/bestellvorschlaege-automatisieren/</link>
+				<pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/bestellvorschlaege-automatisieren/</guid>
+				<description>&lt;p&gt;Die Frage ist selten, ob man Bestellvorschlaege automatisieren will, sondern ob die Voraussetzungen stimmen. Wer zu frueh automatisiert, skaliert seine Planungsfehler mit. Wer zu lang wartet, zahlt weiter die Kosten manueller Disposition: gebundene Personalzeit, hoehere Override-Raten, mehr Out-of-Stocks. Dieser Artikel liefert vier konkrete Kriterien, mit denen SCM-Leiter und Einkaufsleiter die eigene Readiness einschaetzen koennen.&lt;/p&gt;&#xA;&lt;h2 id=&#34;vier-signale-die-zeigen-automatische-bestellvorschlaege-lohnen-sich-jetzt&#34;&gt;Vier Signale, die zeigen: automatische Bestellvorschlaege lohnen sich jetzt&lt;/h2&gt;&#xA;&lt;p&gt;Ein automatischer Bestellvorschlag ist eine systemseitig berechnete Empfehlung fuer Zeitpunkt und Menge einer Bestellung. Der Disponent prueft und gibt frei, statt von Grund auf zu berechnen. Vom vollautomatischen Bestellen unterscheidet er sich darin, dass die Freigabe beim Menschen bleibt.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

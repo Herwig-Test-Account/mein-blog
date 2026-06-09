@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Circly-AI-Test</title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content on Circly-AI-Test</description>
+		<title>Automatisierung on Circly-AI-Test</title>
+		<link>http://localhost:1313/tags/automatisierung/</link>
+		<description>Recent content in Automatisierung on Circly-AI-Test</description>
 		<generator>Hugo</generator>
 		<language>de</language>
 		
@@ -12,7 +12,7 @@
 		
 			<lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/automatisierung/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Bestellvorschlaege automatisieren: Wann der Schritt lohnt und wann nicht</title>
 				<link>http://localhost:1313/posts/bestellvorschlaege-automatisieren/</link>

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="article-wrapper">
+  <div class="container">
+
+    <div class="article-breadcrumb">
+      <a href="/">Start</a> / <a href="/posts">Wissen</a> / <span>{{ .Title }}</span>
+    </div>
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="post-date">{{ .Date.Format "02.01.2006" }}</span>
+        {{ with .Params.tags }}
+          {{ range . }}<span class="post-tag">{{ . }}</span>{{ end }}
+        {{ end }}
+      </div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-lead">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+
+    <div class="article-footer">
+      <a href="/posts" class="back-link">← Zurück zur Übersicht</a>
+    </div>
+
+  </div>
+</div>
+{{ end }}

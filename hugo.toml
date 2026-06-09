@@ -1,8 +1,13 @@
-baseURL = "https://mein-blog.pages.dev"
-languageCode = "de"
-title = "Mein Blog"
-theme = "PaperMod"
+baseURL = "https://circly-ai-test.pages.dev"
+locale = "de"
+title = "Circly-AI-Test"
 
 [params]
-  author = "Herwi"
-  description = "Mein AI-nativer Blog"
+  author = "Herwig"
+  description = "Supply Chain Intelligence. Aus der Praxis, für die Praxis."
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false

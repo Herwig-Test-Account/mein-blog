@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Supply Chain Wissen</span>
+    <h1>Disposition und Planung.<br>Ohne Rauschen.</h1>
+    <p class="hero-sub">Konkrete Analysen für SCM-Leiter und Einkaufsleiter im Mittelstand. Kein Marketing, keine Pauschalurteile.</p>
+    <a href="/posts" class="btn-primary">Alle Artikel lesen</a>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <h2 class="section-title">Zuletzt erschienen</h2>
+    <div class="post-list">
+      {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">{{ .Date.Format "02.01.2006" }}</span>
+          {{ with .Params.tags }}<span class="post-tag">{{ index . 0 }}</span>{{ end }}
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p class="post-description">{{ .Description }}</p>
+        <a href="{{ .Permalink }}" class="post-link">Artikel lesen →</a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
