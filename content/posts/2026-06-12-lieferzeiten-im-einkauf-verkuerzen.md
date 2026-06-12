@@ -1,9 +1,14 @@
 ---
-title: "Lieferzeiten im Einkauf verkürzen"
-date: 2026-06-12
-draft: true
-tags: ["Einkauf", "Lieferzeiten", "Supply Chain", "Beschaffung", "Lieferantenmanagement"]
-description: "Lange Lieferzeiten binden Kapital, gefährden Produktionspläne und kosten Flexibilität. Dieser Artikel zeigt, mit welchen Maßnahmen mittelständische Unternehmen ihre Beschaffungszeiten systematisch reduzieren können."
+title: Lieferzeiten im Einkauf verkürzen
+date: 2026-06-12T00:00:00.000Z
+draft: false
+description: 'Lange Lieferzeiten binden Kapital, gefährden Produktionspläne und kosten Flexibilität. Dieser Artikel zeigt, mit welchen Maßnahmen mittelständische Unternehmen ihre Beschaffungszeiten systematisch reduzieren können.'
+tags:
+  - Einkauf
+  - Lieferzeiten
+  - Supply Chain
+  - Beschaffung
+  - Lieferantenmanagement
 ---
 
 Lange Lieferzeiten sind eines der häufigsten Probleme im Einkauf mittelständischer Unternehmen. Sie zwingen zu höheren Sicherheitsbeständen, erschweren die Reaktion auf Nachfrageschwankungen und erhöhen das Risiko, dass Produktionspläne ins Stocken geraten. Dabei stecken die Ursachen selten ausschließlich beim Lieferanten – oft liegt ein erheblicher Teil des Problems in den eigenen Prozessen. Wer Lieferzeiten dauerhaft verkürzen will, muss beide Seiten betrachten.
@@ -12,9 +17,9 @@ Lange Lieferzeiten sind eines der häufigsten Probleme im Einkauf mittelständis
 
 Lieferzeit ist nicht gleich Lieferzeit. Es lohnt sich, zwischen drei Komponenten zu unterscheiden:
 
-- **Produktionsvorlaufzeit beim Lieferanten**: die Zeit, die der Lieferant benötigt, um die Ware herzustellen oder bereitzustellen.
-- **Transportzeit**: der physische Weg vom Lieferanten ins eigene Lager.
-- **Interne Durchlaufzeit**: die Zeit vom Bedarfsanforderung bis zur Bestellung – also alles, was intern passiert, bevor die Bestellung überhaupt beim Lieferanten eingeht.
+* **Produktionsvorlaufzeit beim Lieferanten**: die Zeit, die der Lieferant benötigt, um die Ware herzustellen oder bereitzustellen.
+* **Transportzeit**: der physische Weg vom Lieferanten ins eigene Lager.
+* **Interne Durchlaufzeit**: die Zeit vom Bedarfsanforderung bis zur Bestellung – also alles, was intern passiert, bevor die Bestellung überhaupt beim Lieferanten eingeht.
 
 In der Praxis wird die interne Durchlaufzeit häufig unterschätzt. Genehmigungsschleifen, unklare Zuständigkeiten, fehlende Stammdaten oder ein schlecht konfiguriertes ERP-System können dazu führen, dass zwischen Bedarfsmeldung und ausgelöster Bestellung mehrere Tage vergehen. Diese Zeit ist verschwendet, weil sie nichts mit der tatsächlichen Beschaffung zu tun hat.
 
@@ -60,12 +65,12 @@ Selbst ohne aufwändige IT-Projekte lassen sich einfache Maßnahmen umsetzen: ei
 
 Bevor Sie Maßnahmen einleiten, helfen diese Fragen zur Standortbestimmung:
 
-- Wie lang ist die durchschnittliche interne Durchlaufzeit von der Bedarfsmeldung bis zur ausgelösten Bestellung?
-- Wie viele Bestellungen pro Monat sind Eilbestellungen – und was sind die Ursachen dafür?
-- Sind Lieferzeiten für Ihre A- und B-Artikel aktuell und korrekt im ERP hinterlegt?
-- Mit welchen Lieferanten haben Sie noch keine vertragliche Regelung zu Expresslieferungen?
-- Wann haben Sie zuletzt mit Ihren wichtigsten Lieferanten über Lieferzeitverbesserungen gesprochen?
-- Für welche kritischen Teile haben Sie aktuell nur einen einzigen Lieferanten?
+* Wie lang ist die durchschnittliche interne Durchlaufzeit von der Bedarfsmeldung bis zur ausgelösten Bestellung?
+* Wie viele Bestellungen pro Monat sind Eilbestellungen – und was sind die Ursachen dafür?
+* Sind Lieferzeiten für Ihre A- und B-Artikel aktuell und korrekt im ERP hinterlegt?
+* Mit welchen Lieferanten haben Sie noch keine vertragliche Regelung zu Expresslieferungen?
+* Wann haben Sie zuletzt mit Ihren wichtigsten Lieferanten über Lieferzeitverbesserungen gesprochen?
+* Für welche kritischen Teile haben Sie aktuell nur einen einzigen Lieferanten?
 
 ## Fazit
 
