@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Artikel Generator — Circly-AI-Test</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f3; color: #1a1a1a; }
+    .header { background: #1a1a1a; color: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .header h1 { font-size: 15px; font-weight: 500; }
+    .header a { color: #aaa; font-size: 13px; text-decoration: none; }
+    .header a:hover { color: #fff; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .card { background: #fff; border: 1px solid #e4e2dc; border-radius: 8px; padding: 1.5rem; }
+    .card h2 { font-size: 13px; font-weight: 600; color: #666; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: .05em; }
+    label { font-size: 12px; font-weight: 500; color: #666; display: block; margin-bottom: 4px; margin-top: .75rem; }
+    label:first-of-type { margin-top: 0; }
+    input, select, textarea { width: 100%; padding: 8px 10px; font-size: 13px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; background: #fff; color: #1a1a1a; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #1a56db; }
+    textarea { resize: vertical; }
+    .btn { display: block; width: 100%; padding: 10px; background: #1a56db; color: #fff; border: none; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 1.25rem; font-family: inherit; }
+    .btn:hover { opacity: .88; }
+    .btn:disabled { background: #ccc; cursor: not-allowed; }
+    .btn-secondary { background: #fff; color: #1a1a1a; border: 1px solid #ddd; margin-top: .5rem; }
+    .btn-secondary:hover { background: #f5f5f3; opacity: 1; }
+    .result-area { width: 100%; min-height: 400px; padding: 10px; font-size: 12px; font-family: monospace; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; resize: vertical; color: #1a1a1a; }
+    .status { font-size: 12px; margin-top: .5rem; padding: 6px 10px; border-radius: 4px; }
+    .status.loading { background: #eff6ff; color: #1a56db; }
+    .status.success { background: #f0fdf4; color: #166534; }
+    .status.error { background: #fef2f2; color: #991b1b; }
+    .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tag { display: inline-flex; align-items: center; gap: 4px; background: #eef2ff; color: #1a56db; font-size: 11px; padding: 2px 8px; border-radius: 3px; }
+    .tag button { background: none; border: none; cursor: pointer; color: #1a56db; font-size: 14px; line-height: 1; padding: 0; }
+    .tip { font-size: 12px; color: #888; margin-top: 1rem; line-height: 1.6; background: #f9f9f7; padding: .75rem; border-radius: 4px; border-left: 3px solid #e4e2dc; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>✨ AI Artikel Generator</h1>
+  <a href="/admin/index.html">← Zurück zu TinaCMS</a>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>Artikel konfigurieren</h2>
+
+    <label>Thema / Titel *</label>
+    <input type="text" id="title" placeholder="z.B. Wiederbeschaffungszeit richtig berechnen">
+
+    <label>Zusätzliche Anweisungen</label>
+    <textarea id="description" rows="3" placeholder="z.B. Drei Prüffragen pro Abschnitt, konkretes Rechenbeispiel einbauen..."></textarea>
+
+    <label>Sprache</label>
+    <select id="language">
+      <option value="Deutsch">Deutsch</option>
+      <option value="Englisch">Englisch</option>
+      <option value="Französisch">Französisch</option>
+      <option value="Spanisch">Spanisch</option>
+      <option value="Italienisch">Italienisch</option>
+    </select>
+
+    <label>Länge</label>
+    <select id="length">
+      <option value="600-800">600–800 Wörter</option>
+      <option value="800-1200" selected>800–1200 Wörter</option>
+      <option value="1200-1800">1200–1800 Wörter</option>
+    </select>
+
+    <label>Tags (Enter zum Hinzufügen)</label>
+    <input type="text" id="tag-input" placeholder="Tag eingeben + Enter">
+    <div class="tag-row" id="tags"></div>
+
+    <button class="btn" onclick="generate()" id="gen-btn">✨ Artikel generieren</button>
+
+    <div class="tip">
+      Nach dem Generieren: Inhalt kopieren → in TinaCMS neuen Artikel erstellen → einfügen → publishen.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Generierter Artikel</h2>
+    <textarea class="result-area" id="result" readonly placeholder="Der generierte Artikel erscheint hier..."></textarea>
+    <div id="status"></div>
+    <button class="btn btn-secondary" onclick="copyToClipboard()" id="copy-btn" style="display:none">📋 In Zwischenablage kopieren</button>
+  </div>
+</div>
+
+<script>
+  const tagList = [];
+
+  document.getElementById('tag-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      e.preventDefault();
+      tagList.push(this.value.trim());
+      renderTags();
+      this.value = '';
+    }
+  });
+
+  function renderTags() {
+    const container = document.getElementById('tags');
+    container.innerHTML = tagList.map((tag, i) =>
+      `<span class="tag">${tag} <button onclick="removeTag(${i})">×</button></span>`
+    ).join('');
+  }
+
+  function removeTag(i) {
+    tagList.splice(i, 1);
+    renderTags();
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('status');
+    el.className = 'status ' + type;
+    el.textContent = msg;
+  }
+
+  async function generate() {
+    const title = document.getElementById('title').value.trim();
+    if (!title) { alert('Bitte ein Thema eingeben.'); return; }
+
+    const btn = document.getElementById('gen-btn');
+    btn.disabled = true;
+    btn.textContent = 'Generiert...';
+    document.getElementById('copy-btn').style.display = 'none';
+    document.getElementById('result').value = '';
+    setStatus('Claude schreibt deinen Artikel...', 'loading');
+
+    try {
+      const response = await fetch('/functions/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title,
+          description: document.getElementById('description').value,
+          language: document.getElementById('language').value,
+          length: document.getElementById('length').value,
+          tags: tagList
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.content) {
+        document.getElementById('result').value = data.content;
+        document.getElementById('copy-btn').style.display = 'block';
+        setStatus('✅ Artikel erfolgreich generiert.', 'success');
+      } else {
+        setStatus('Fehler: Kein Inhalt erhalten.', 'error');
+      }
+    } catch (err) {
+      setStatus('Verbindungsfehler. Bitte versuche es erneut.', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '✨ Artikel generieren';
+    }
+  }
+
+  function copyToClipboard() {
+    const text = document.getElementById('result').value;
+    navigator.clipboard.writeText(text).then(() => {
+      setStatus('✅ In Zwischenablage kopiert — jetzt in TinaCMS einfügen.', 'success');
+    });
+  }
+</script>
+
+</body>
+</html>
