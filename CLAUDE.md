@@ -1,5 +1,23 @@
 # Circly-AI-Test — Blog-Kontext für Claude Code
 
+## ⚠ SICHERHEIT HAT VORRANG — ZUERST LESEN
+
+Vor JEDER Änderung an Functions, Tokens, Authentifizierung, Deployment
+oder Abhängigkeiten gilt die `SECURITY.md` in diesem Repo als verbindlich.
+Sie ist vor solchen Schritten zu lesen und einzuhalten.
+
+Kernregeln (Details in SECURITY.md):
+- Secrets (API-Keys, Tokens, Passwörter) NIEMALS in Browser, Frontend-JS
+  oder Repo. Nur als Cloudflare Secret oder in `.env` (steht in `.gitignore`).
+- Least Privilege: Tokens nur mit minimal nötigem Scope (Fine-grained,
+  nur das eine Repo). Keine Allzweck-Tokens.
+- Eingaben in Functions immer validieren. Dateinamen aus Nutzereingaben
+  gegen Path Traversal absichern (nur a–z, 0–9, Bindestrich).
+- Nichts Ungeprüftes geht live: AI-generierte Inhalte immer `draft: true`.
+- Vor jedem Commit: Steht versehentlich ein Schlüssel im Diff? → STOPP.
+- Bei Unsicherheit über aktuelle Fakten (APIs, Config): nachschlagen
+  statt raten. Keine Kartenhäuser.
+
 ## Über diesen Blog
 - Name: Circly-AI-Test
 - Thema: Supply Chain Management, Disposition, Bestandsplanung
@@ -22,7 +40,7 @@
 ---
 title: "Titel des Artikels"
 date: "YYYY-MM-DD"
-draft: false
+draft: true
 tags: ["Tag1", "Tag2"]
 description: "Kurze Beschreibung unter 160 Zeichen für SEO."
 ---
